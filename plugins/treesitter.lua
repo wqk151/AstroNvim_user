@@ -9,6 +9,7 @@ return {
       "python",
       "c",
       "cmake",
+      "lua",
     },
   },
 }
