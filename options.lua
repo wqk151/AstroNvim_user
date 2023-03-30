@@ -15,3 +15,14 @@ local function unix_opts()
   }
 end
 local os_opts = jit.os == "Windows" and win_opts() or unix_opts()
+
+return {
+  opt = {},
+  o = {
+    cursorline = true,
+    cursorcolumn = true,
+  },
+  g = {
+    translator_default_engines = { "bing", "youdao" },
+  },
+}
