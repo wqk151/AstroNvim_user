@@ -3,7 +3,7 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
-local utils = require "user.utils"
+-- local utils = require "user.utils"
 local asutils = require "astronvim.utils"
 
 local maps = { i = {}, n = {}, v = {}, t = {}, x = {}, c = {} }
@@ -29,9 +29,9 @@ maps.n[";"] = { ":" }
 maps.n["<tab>"] = { ":wincmd w<cr>" }
 
 -- 访问系统剪切板
-maps.v["<leader>y"] = { '"+y' }
-maps.v["<leader>p"] = { '"+p' }
-maps.v["<leader>d"] = { '"+d' }
+maps.v["<leader>y"] = { '"+y', desc = "copy to register" }
+maps.n["<leader>p"] = { '"+p', desc = "paste from register" }
+maps.n["<leader>d"] = { '"+d', desc = "delete from register" }
 
 -- 编辑完成后跳出括号
 maps.i["<c-j>"] = { "<Esc>la" }
@@ -72,6 +72,8 @@ maps.n["<leader>T"] = { "<cmd>TodoTelescope<cr>", desc = "Find TODOs in Telescop
 -- terminal mappings
 maps.t["<C-q>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
 maps.t["<esc><esc>"] = { "<C-\\><C-n>:q<cr>", desc = "Terminal quit" }
-maps.n["<leader>ti"] = { function() asutils.toggle_term_cmd "ipython" end, desc = "ToggleTerm ipython" }
-
+maps.n["<leader>ti"] = {
+  function() asutils.toggle_term_cmd "ipython" end,
+  desc = "ToggleTerm ipython",
+}
 return maps

@@ -22,5 +22,4 @@ return {
       go = "time cd $dir && go run $fileName",
     },
   },
-  config = function(_, opts) require("code_runner").setup(opts) end,
 }
