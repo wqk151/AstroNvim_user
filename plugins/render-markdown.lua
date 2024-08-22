@@ -1,10 +1,10 @@
 -- https://github.com/linkarzu/dotfiles-latest/blob/main/neovim/neobean/lua/plugins/render-markdown.lua
-local color1_bg = "#d265b1"
-local color2_bg = "#00a1f9"
-local color3_bg = "#a08cf2"
-local color4_bg = "#43ad7f"
-local color5_bg = "#f1dd79"
-local color6_bg = "#f7c67f"
+local color1_bg = "#ee99a0"
+local color2_bg = "#8bd5ca"
+local color3_bg = "#a6da95"
+local color4_bg = "#cba6f7"
+local color5_bg = "#eed49f"
+local color6_bg = "#7dc4e4"
 local color_fg = "#323449"
 -- Heading colors (when not hovered over), extends through the entire line
 vim.cmd(string.format([[highlight Headline1Bg guifg=%s guibg=%s]], color_fg, color1_bg))
@@ -38,14 +38,14 @@ return {
       heading = {
         -- position = "inline",
         -- border = true,
-        backgrounds = {
-          "Headline1Bg",
-          "Headline2Bg",
-          "Headline3Bg",
-          "Headline4Bg",
-          "Headline5Bg",
-          "Headline6Bg",
-        },
+        -- backgrounds = {
+        --   "Headline1Bg",
+        --   "Headline2Bg",
+        --   "Headline3Bg",
+        --   "Headline4Bg",
+        --   "Headline5Bg",
+        --   "Headline6Bg",
+        -- },
       },
     }
   end,
