@@ -118,9 +118,11 @@ maps.v["<leader>ss"] = { "<cmd>MCstart<cr>", desc = "select text under the curso
 
 -- view markdown
 maps.n["<leader>m"] = sections.m
-if is_available "markview" then maps.n["<leader>mm"] = { "<cmd>Markview toggleAll<cr>", desc = "Toggle markview" } end
-if is_available "render-markdown" then
-  maps.n["<leader>mp"] = { "<cmd>RenderMarkdown toggle<cr>", desc = "Toggle markdown render" }
+if is_available "markview.nvim" then
+  maps.n["<leader>mm"] = { "<cmd>Markview toggleAll<cr>", desc = "Toggle markview" }
+end
+if is_available "render-markdown.nvim" then
+  maps.n["<leader>mm"] = { "<cmd>RenderMarkdown toggle<cr>", desc = "Toggle markdown render" }
 end
 maps.n["<leader>mo"] = { "<cmd>MarkmapOpen<cr>", desc = "Open markmap" }
 maps.n["<leader>mw"] = { "<cmd>MarkmapWatch<cr>", desc = "Open markmap and watch for changes" }
