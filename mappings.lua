@@ -126,6 +126,8 @@ if is_available "render-markdown.nvim" then
 end
 maps.n["<leader>mo"] = { "<cmd>MarkmapOpen<cr>", desc = "Open markmap" }
 maps.n["<leader>mw"] = { "<cmd>MarkmapWatch<cr>", desc = "Open markmap and watch for changes" }
+maps.n["<leader>mc"] = { function() require("image").disable() end, desc = "Disable render image" }
+maps.n["<leader>mi"] = { function() require("image").enable() end, desc = "Render image" }
 
 -- todo-comments
 maps.n["<leader>fT"] = { "<cmd>TodoTelescope<cr>", desc = "Find TODOs in wrokspace" }

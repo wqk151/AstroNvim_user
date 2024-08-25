@@ -11,7 +11,7 @@ return {
   -- { "phaazon/hop.nvim", enabled = false },
   { "Exafunction/codeium.nvim", enabled = false },
   { "OXY2DEV/markview.nvim", enabled = false },
-  { "3rd/image.nvim", enabled = false },
+  -- { "3rd/image.nvim", enabled = false },
   -- { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
   -- { "kylechui/nvim-surround", enabled = false },
   -- { "folke/todo-comments.nvim", enabled = false },
