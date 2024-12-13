@@ -1,6 +1,6 @@
 # AstroNvim config
 
-```bash
+```sh
 git clone https://github.com/wqk151/AstroNvim_user ~/.config/nvim/lua/user
 ```
 
@@ -17,14 +17,14 @@ git clone https://github.com/wqk151/AstroNvim_user ~/.config/nvim/lua/user
 
 ## Dependencies
 
-```bash
+```sh
 apt update -y
 apt install -y gcc g++ wget git curl python3-venv software-properties-common tree
 ```
 
 ## Install Neovim
 
-```bash
+```sh
 sudo apt install gcc g++ make cmake pkg-config automake libtool libtool-bin unzip gettext
 git clone https://github.com/neovim/neovim.git
 make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -34,7 +34,7 @@ nvim --version
 
 ## Some tools
 
-```bash
+```sh
 # rg
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
@@ -192,10 +192,10 @@ cargo install --git https://github.com/kamiyaa/joshuto.git --force
 | Hover Document       | Shift + k       |               |
 | Format Document      | Leader + lf     |               |
 | Symbols Outline      | Leader + lS     |               |
-| Line Diagnostics     | gl, Leader + ld |               |
+| Line Diagnostics     | Leader + ld,gl  |               |
 | All Diagnostics      | Leader + lD     |               |
 | Code Actions         | Leader + la     |               |
-| Signature Help       | Leader + lh     |               |
+| Signature Help       | Leader + lh,gs  |               |
 | Rename               | Leader + lr     |               |
 | Document Symbols     | Leader + ls     | Leader + ll   |
 | Workspace Symbols    | Leader + lG     |               |
@@ -281,8 +281,8 @@ cargo install --git https://github.com/kamiyaa/joshuto.git --force
 
 | Action                     | Mappings    |
 | -------------------------- | ----------- |
-| Next Hunk                  | `]g`        |
-| Previous Hunk              | `[g`        |
+| Next Hunk                  | ]g          |
+| Previous Hunk              | [g          |
 | Blame Line                 | Leader + gl |
 | Preview Hunk               | Leader + gp |
 | Reset Hunk                 | Leader + gr |
@@ -325,20 +325,20 @@ cargo install --git https://github.com/kamiyaa/joshuto.git --force
 
 ### Telekasten
 
-| Action                                                                 | Mappings           |
-| ---------------------------------------------------------------------- | ------------------ |
-| Find notes by title (filename)                                         | Leader + zf        |
-| Search (grep) in all notes                                             | Leader + zg        |
-| Rename current note                                                    | Leader + zr        |
-| Open today's daily note                                                | Leader + zd        |
-| Follow the link under the cursor                                       | Leader + zz        |
-| Create a new note                                                      | Leader + zn        |
-| Show the calendar                                                      | Leader + zc        |
-| Show all notes linking to the current one                              | Leader + zb        |
-| Brings up the tag list                                                 | Leader + zt        |
-| Paste an image from the clipboard into a file and inserts a link to it | Leader + zi        |
-| Browse images/media files and insert a link to the selected one        | Leader + zI        |
-| Insert a link to a note                                                | `[[` (Insert mode) |
+| Action                                                                 | Mappings         |
+| ---------------------------------------------------------------------- | ---------------- |
+| Find notes by title (filename)                                         | Leader + zf      |
+| Search (grep) in all notes                                             | Leader + zg      |
+| Rename current note                                                    | Leader + zr      |
+| Open today's daily note                                                | Leader + zd      |
+| Follow the link under the cursor                                       | Leader + zz      |
+| Create a new note                                                      | Leader + zn      |
+| Show the calendar                                                      | Leader + zc      |
+| Show all notes linking to the current one                              | Leader + zb      |
+| Brings up the tag list                                                 | Leader + zt      |
+| Paste an image from the clipboard into a file and inserts a link to it | Leader + zi      |
+| Browse images/media files and insert a link to the selected one        | Leader + zI      |
+| Insert a link to a note                                                | [[ (Insert mode) |
 
 ### Trouble
 
@@ -398,12 +398,12 @@ chagen: cs
 
 | Normal mode | Insert mode | Action                   |
 | ----------- | ----------- | ------------------------ |
-| f           | `<c-f>`     | find_project_files       |
-| b           | `<c-b>`     | browse_project_files     |
-| d           | `<c-d>`     | delete_project           |
-| s           | `<c-s>`     | search_in_project_files  |
-| r           | `<c-r>`     | recent_project_files     |
-| w           | `<c-w>`     | change_working_directory |
+| f           | <c-f>       | find_project_files       |
+| b           | <c-b>       | browse_project_files     |
+| d           | <c-d>       | delete_project           |
+| s           | <c-s>       | search_in_project_files  |
+| r           | <c-r>       | recent_project_files     |
+| w           | <c-w>       | change_working_directory |
 
 ### Go Command
 
@@ -433,18 +433,18 @@ chagen: cs
 
 ## LSP Install List
 
-| Language   | LSP                    | Debug    | Format                    |
-| ---------- | ---------------------- | -------- | ------------------------- |
-| python     | pyright                | debugpy  | isort,black,(`ruff_lsp`)  |
-| go         | gopls                  | delve    | goimports,gofumpt         |
-| `c/c++`    | clangd                 | cpptools | `clang_format`            |
-| markdown   | marksman,`prosemd_lsp` |          | prettierd                 |
-| sh         | shfmt                  |          |                           |
-| json       | jq,`jsonld_lsp`        |          | prettierd                 |
-| cmake      | cmake,                 |          | cmakelang(`cmake_format`) |
-| yaml       | yamlls                 |          | prettierd                 |
-| lua        | `lua_ls`               |          | stylua                    |
-| Dockerfile | dockerls               |          |                           |
+| Language   | LSP                  | Debug    | Format                  |
+| ---------- | -------------------- | -------- | ----------------------- |
+| python     | pyright              | debugpy  | isort,black,(ruff_lsp)  |
+| go         | gopls                | delve    | goimports,gofumpt       |
+| c++        | clangd               | cpptools | clang_format            |
+| markdown   | marksman,prosemd_lsp |          | prettierd               |
+| sh         | shfmt                |          |                         |
+| json       | jq,jsonld_lsp        |          | prettierd               |
+| cmake      | cmake,               |          | cmakelang(cmake_format) |
+| yaml       | yamlls               |          | prettierd               |
+| lua        | lua_ls               |          | stylua                  |
+| Dockerfile | dockerls             |          |                         |
 
 To enable the language server,like:
 
@@ -454,7 +454,7 @@ require'lspconfig'.ruff_lsp.setup{}
 
 ## Snippets
 
-```bash
+```sh
 [friendly-snippets](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua)
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua)
 ```
@@ -470,7 +470,7 @@ Use `A` or `M`, like `<A-t>` ,`<M-up>`
 
 ## Debug ArstroNvim with docker
 
-```bash
+```sh
 # no proxy
 docker run --rm --network host  -it wqk/ubuntu20.04-astronvim:latest bash
 
@@ -481,7 +481,7 @@ docker run --rm --network host -e all_proxy=socks://127.0.0.1:7891/ -e http_prox
 
 Add proxy in container
 
-```bash
+```sh
 export all_proxy=socks://127.0.0.1:7891/
 export http_proxy=http://127.0.0.1:7890/
 export https_proxy=http://127.0.0.1:7890/
@@ -489,7 +489,7 @@ export https_proxy=http://127.0.0.1:7890/
 
 ## Execute nvim command in terminal
 
-```bash
+```sh
 nvim --headless +PluginInstall +qa
 ```
 
@@ -497,7 +497,7 @@ nvim --headless +PluginInstall +qa
 
 Convert dos to unix or the line endswith `^M`
 
-```bash
+```sh
 apt-get install dos2unix
 
 dos2unix filename

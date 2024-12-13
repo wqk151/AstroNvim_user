@@ -19,7 +19,7 @@ return {
       build = ":Codeium auth",
       config = function()
         require("codeium").setup {
-          detect_proxy = nil,
+          -- detect_proxy = nil,
         }
       end,
     },

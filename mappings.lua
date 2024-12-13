@@ -70,6 +70,8 @@ maps.c["<c-e>"] = { "<End>" }
 
 -- go back to definition
 -- maps.n["gb"] = { "<C-o>" }
+--
+maps.n["gs"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "show signature help" }
 
 -- Hop
 -- maps.n["<leader>jc"] = { "<cmd>HopChar1<cr>", desc = "Character" }
